@@ -1,0 +1,88 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | NED Point Loop{% endblock %}
+
+{% block branding %}
+<div id="site-name"><a href="{% url 'admin:index' %}"><img src="{% static 'ned/ned-logo.png' %}" alt="NED University" class="np-logo"><span class="np-name">NED Point <span class="np-gold">Loop</span></span><span class="np-tag">Transport office</span></a></div>
+{% endblock %}
+
+{% block extrahead %}{{ block.super }}<link rel="icon" type="image/png" href="{% static 'ned/favicon.png' %}">{% endblock %}
+
+{% block extrastyle %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* NED Point Loop theme: maroon + gold on cream (same as the student/driver app).
+     Always light, even when the computer is in dark mode. */
+  :root, html[data-theme="light"], html[data-theme="dark"] {
+    color-scheme: light;
+    --font-family-primary: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --primary: #7a1d42; --secondary: #3a0c1f; --accent: #f5b83d; --primary-fg: #ffffff;
+    --header-bg: #3a0c1f; --header-color: #f4dbe5; --header-branding-color: #ffffff; --header-link-color: #ffffff;
+    --breadcrumbs-bg: #631635; --breadcrumbs-fg: #f4dbe5; --breadcrumbs-link-fg: #ffffff;
+    --link-fg: #7a1d42; --link-hover-color: #c98a10; --link-selected-fg: #3a0c1f;
+    --button-bg: #7a1d42; --button-hover-bg: #631635;
+    --default-button-bg: #e9a21b; --default-button-hover-bg: #c98a10;
+    --object-tools-bg: #7a1d42; --object-tools-hover-bg: #e9a21b;
+    --body-fg: #2f2a27; --body-quiet-color: #6b625c; --body-medium-color: #4a433e; --body-loud-color: #1a1513;
+    --body-bg: #f5f1ea; --darkened-bg: #ebe4d8; --selected-bg: #f4dbe5; --selected-row: #fff3d6;
+    --hairline-color: #e7dfd2; --border-color: #d8cfc1; --error-fg: #b42318;
+    --close-button-bg: #6b625c; --close-button-hover-bg: #2f2a27;
+    --delete-button-bg: #b42318; --delete-button-hover-bg: #912018;
+    --message-success-bg: #e3f4e6; --message-warning-bg: #fff3d6; --message-error-bg: #fdecec;
+  }
+  .theme-toggle { display: none !important; }
+
+  #header {
+    background: linear-gradient(100deg, #3a0c1f 0%, #631635 60%, #4a2350 100%);
+    border-bottom: 4px solid #f5b83d;
+    padding: 14px 32px;
+  }
+  #site-name a { font-weight: 800; letter-spacing: .2px; display: inline-flex; align-items: center; gap: 10px; }
+  .np-logo { width: 40px; height: 40px; object-fit: contain; }
+  #site-name a, #site-name a:link, #site-name a:visited { color: #fff; }
+  .np-name { white-space: nowrap; }
+  body.login .np-logo { width: 52px; height: 52px; }
+  body.login .np-tag { display: none; }
+  .np-gold { color: #f5b83d; }
+  .np-tag {
+    background: #f5b83d; color: #3a0c1f; font-size: 11px; font-weight: 800;
+    padding: 2px 9px; border-radius: 999px; margin-left: 8px; vertical-align: middle; letter-spacing: 0;
+  }
+
+  /* Section boxes */
+  .module { border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(58,12,31,.08); background: #fff; }
+  .module h2, .module caption, .inline-group h2 { padding: 10px 14px; font-size: 13px; font-weight: 700; letter-spacing: .5px; }
+  .module caption a, .module h2 a { color: #fff; }
+  .app-accounts caption   { background: #4a2350 !important; }
+  .app-auth caption       { background: #3a0c1f !important; }
+  .app-passes caption     { background: #7a1d42 !important; }
+  .app-tracking caption   { background: #b5541c !important; }
+  .app-transport caption  { background: #8a5a12 !important; }
+  #nav-sidebar .module caption a { color: #fff; }
+
+  /* Buttons */
+  .button, input[type=submit], input[type=button], .submit-row input, a.button {
+    border-radius: 8px !important; font-weight: 600;
+  }
+  .object-tools a { border-radius: 999px !important; }
+
+  /* Tables */
+  #result_list thead th { background: #ebe4d8; }
+  #result_list tbody tr:hover td { background: #fff3d6; }
+  #changelist-filter { border-radius: 12px; overflow: hidden; background: #fff; }
+  #changelist-filter h2 { background: #3a0c1f; color: #fff; }
+
+  /* Login page */
+  body.login {
+    background: radial-gradient(ellipse at 70% 10%, #8a3a2a 0%, transparent 45%),
+                linear-gradient(160deg, #3a0c1f 0%, #631635 55%, #4a2350 100%);
+    min-height: 100vh;
+  }
+  body.login #container { border-radius: 16px; overflow: hidden; box-shadow: 0 16px 40px rgba(0,0,0,.35); background: #f5f1ea; }
+  body.login #header { padding: 18px 24px; }
+</style>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

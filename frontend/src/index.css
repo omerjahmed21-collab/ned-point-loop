@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  /* NED Point Loop theme: maroon + gold on cream */
+  --color-brand-50: #fbf1f5;
+  --color-brand-100: #f4dbe5;
+  --color-brand-200: #e7b4c7;
+  --color-brand-500: #9b2552;
+  --color-brand-600: #7a1d42;
+  --color-brand-700: #631635;
+  --color-brand-800: #4d1029;
+  --color-brand-900: #3a0c1f;
+  --color-accent-300: #f9cd6b;
+  --color-accent-400: #f5b83d;
+  --color-accent-500: #e9a21b;
+  --color-cream-50: #fbf8f3;
+  --color-cream-100: #f5f1ea;
+  --color-cream-200: #ebe4d8;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-cream-100 text-stone-800 antialiased;
+}
+
+@utility card {
+  @apply bg-white rounded-2xl shadow-sm border border-cream-200;
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+@utility btn-primary {
+  @apply btn bg-brand-600 text-white hover:bg-brand-700;
+}
+
+@utility btn-outline {
+  @apply btn border border-cream-200 bg-white text-stone-700 hover:bg-cream-50;
+}
+
+@utility btn-danger {
+  @apply btn bg-red-600 text-white hover:bg-red-700;
+}
+
+@utility input {
+  @apply w-full rounded-xl border border-cream-200 bg-white px-3.5 py-2.5 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100;
+}
+
+@utility label {
+  @apply block text-sm font-semibold text-stone-700 mb-1;
+}
+
+/* Bus marker on the map */
+.bus-marker {
+  background: transparent;
+  border: none;
+}
+.bus-marker div {
+  @apply bg-accent-400 text-brand-900 text-xs font-bold rounded-full px-2 py-1 shadow-md border-2 border-white whitespace-nowrap;
+}
+.bus-marker.offline div {
+  @apply bg-stone-300 text-stone-600;
+}
+
+/* QR scanner box */
+#qr-reader video {
+  border-radius: 1rem;
+}
+
+/* Printing the fee receipt: only the receipt, no app header or nav */
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; }
+  main { padding: 0 !important; }
+  .receipt { box-shadow: none; border-color: #ccc; }
+  .receipt header, .receipt footer, .paid-stamp { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
