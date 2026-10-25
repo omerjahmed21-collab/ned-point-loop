@@ -2,6 +2,44 @@
 
 University point bus tracking and fee receipt system for NED University.
 
+## Screenshots
+
+### Student
+| Login | Sign up |
+|---|---|
+| ![Login](01-student-login.png) | ![Sign up](02-student-signup.png) |
+
+| Live map | Bus routes |
+|---|---|
+| ![Live map](maps%20.png) | ![Bus routes](04-bus-routes.png) |
+
+| Route details | Saddar route |
+|---|---|
+| ![Route details](routes.png) | ![Saddar route](sadar%20route.png) |
+
+| Fee payment | Under review | Fee receipt |
+|---|---|---|
+| ![Fee payment](06a-fee-payment.png) | ![Under review](06b-fee-under-review.png) | ![Fee receipt](06c-fee-receipt.png) |
+
+### Driver
+| Trip | Check student |
+|---|---|
+| ![Driver trip](07-driver-trip.png) | ![Check student](08-driver-check-student.png) |
+
+### Transport office (admin)
+| Dashboard | Payments |
+|---|---|
+| ![Admin dashboard](10-admin-dashboard.png) | ![Admin payments](11-admin-payments.png) |
+
+| Payment review |
+|---|
+| ![Payment review](12-admin-payment-review.png) |
+
+### Phone
+| Login | Fee receipt |
+|---|---|
+| ![Mobile login](13-mobile-login.png) | ![Mobile fee receipt](14-mobile-fee-receipt.png) |
+
 
 
 - **Students** sign up with their roll number and photo, track buses live and see routes and timings straight away, and submit their point fee (JazzCash, Easypaisa or bank) with a receipt. Once the transport office approves it, they get a **digital fee receipt** with their photo and details, which they can print or save as PDF.
