@@ -35,10 +35,10 @@ University point bus tracking and fee receipt system for NED University.
 |---|
 | ![Payment review](12-admin-payment-review.png) |
 
-### Phone
-| Login | Fee receipt |
-|---|---|
-| ![Mobile login](13-mobile-login.png) | 
+   ### Phone
+   | Login |
+   |---|
+   | ![Mobile login](13-mobile-login.png) |
 
 
 
